@@ -12,11 +12,6 @@ Robert O'Hara's Six Pack *** Now with V1.2 ***
 
 http://www.smrcc.org.uk/members/g4ugm/index.htm  - G4UGM's Vintage and Classic Computer pages   
 
-
-
-
-STILL TO DO
-
 ## Usage
 
 ```
