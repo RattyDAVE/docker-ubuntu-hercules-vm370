@@ -13,7 +13,8 @@ RUN	apt-get update && \
       sed -i s/Shadow/shadow/g sixpack.conf && \
       apt-get -y autoclean && apt-get -y autoremove && \
       echo "#!/bin/bash" > start_vm370.sh && \
-      echo "/opt/hercules/vm370/hercules -f sixpack.conf > Log.txt"  > start_vm370.sh && \
+      echo "cd /opt/hercules/vm370"  >> start_vm370.sh && \
+      echo "hercules -f sixpack.conf > Log.txt"  >> start_vm370.sh && \
       chmod 755 start_vm370.sh && \
       apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) && \
       rm -rf /var/lib/apt/lists/*
