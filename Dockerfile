@@ -9,10 +9,12 @@ RUN	apt-get update && \
       cd vm370 && \
       wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_2.zip && \
       unzip vm370sixpack-1_2.zip && \
+      sed -i s/Disks/disks/g sixpack.conf && \
+      sed -i s/Shadow/shadow/g sixpack.conf && \
       apt-get -y autoclean && apt-get -y autoremove && \
       apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) && \
       rm -rf /var/lib/apt/lists/*
 
 EXPOSE      3270 8038
 WORKDIR     /opt/hercules/vm370
-ENTRYPOINT  ["/opt/hercules/vm370/hercules -f sixpack.conf > Log.txt"]
+ENTRYPOINT  ["/opt/hercules/vm370/hercules","-f","sixpack.conf",">","Log.txt"]
