@@ -20,4 +20,4 @@ RUN	apt-get update && \
 
 EXPOSE      3270 8038
 WORKDIR     /opt/hercules/vm370
-ENTRYPOINT  ["start_vm370.sh"]
+ENTRYPOINT  ["/opt/hercules/vm370/start_vm370.sh"]
