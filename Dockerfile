@@ -9,6 +9,7 @@ RUN	apt-get update && \
       cd vm370 && \
       wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_2.zip && \
       unzip vm370sixpack-1_2.zip && \
+      rm vm370sixpack-1_2.zip && \
       sed -i s/Disks/disks/g sixpack.conf && \
       sed -i s/Shadow/shadow/g sixpack.conf && \
       apt-get -y autoclean && apt-get -y autoremove && \
