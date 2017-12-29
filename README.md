@@ -1,14 +1,16 @@
 # A docker container containing a fully running VM/370
 
+Part of the retro mainframe series.
+
+* https://hub.docker.com/r//rattydave/docker-ubuntu-hercules-vm370 - vm370 Emulator with Robert O'Hara's Six Pack
+* https://hub.docker.com/r/rattydave/docker-ubuntu-hercules-mvs - Fully running MVS 3.8j Tur(n)key 4- System. IBM Mainframe.
+
 ## Thank you to the following.
 
-Bob Abele's Original 3-Pack System
-
-Andy Norrie's 4-Pack system
-
-Paul Gorinskey's 5-Pack System
-
-Robert O'Hara's Six Pack *** Now with V1.2 ***
+* Bob Abele's Original 3-Pack System
+* Andy Norrie's 4-Pack system
+* Paul Gorinskey's 5-Pack System
+* Robert O'Hara's Six Pack *** Now with V1.2 ***
 
 http://www.smrcc.org.uk/members/g4ugm/index.htm  - G4UGM's Vintage and Classic Computer pages   
 
@@ -44,15 +46,11 @@ By default the OPERATOR userid logs in using the Hercules window.  From the comm
 
 ## There are several userids defined:
 
-CMSUSER (password of CMSUSER):  This userid is best for general work on the system.  It has several minidisks defined, all residing on a dedicated disk pack.  You can backup any work you store on these disks by simply making a copy of the disk pack's shadow file.
-
-I recommend you login as CMSUSER (password of CMSUSER) for most general work.  This user's minidisks reside on their own volume (the 6th pack), making backup of your own work much easier.
-
-MAINT (password of CPCMS):  This is the system programmer's userid.  Logon here if you want to perform system programming tasks.  For example, you could edit the SIXPACK DIRECT A1 file to change the name of CMSUSER to your name, save the file, then issue the DIRECT SIXPACK command to update the sytem directory.  SYSPROG MEMO on MAINT's 191 disk has useful information on how to rebuild the CMS and CP nucleii.
-
-GCCCMS (password of GCCCMS):  Here you will find the source for the GCC compiler, plus useful EXECs set up to help you do bulk compilations of C programs.
-
-BREXX (password of BREXX):  Here you will find the source code for the BREXX REXX interpreter.
+* CMSUSER (password of CMSUSER):  This userid is best for general work on the system.  It has several minidisks defined, all residing on a dedicated disk pack.  You can backup any work you store on these disks by simply making a copy of the disk pack's shadow file.
+* I recommend you login as CMSUSER (password of CMSUSER) for most general work.  This user's minidisks reside on their own volume (the 6th pack), making backup of your own work much easier.
+* MAINT (password of CPCMS):  This is the system programmer's userid.  Logon here if you want to perform system programming tasks.  For example, you could edit the SIXPACK DIRECT A1 file to change the name of CMSUSER to your name, save the file, then issue the DIRECT SIXPACK command to update the sytem directory.  SYSPROG MEMO on MAINT's 191 disk has useful information on how to rebuild the CMS and CP nucleii.
+* GCCCMS (password of GCCCMS):  Here you will find the source for the GCC compiler, plus useful EXECs set up to help you do bulk compilations of C programs.
+*BREXX (password of BREXX):  Here you will find the source code for the BREXX REXX interpreter.
 
 Type HELP CMSCMDS for an overview of the available commands.
 
