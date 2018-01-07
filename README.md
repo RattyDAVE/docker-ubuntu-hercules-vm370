@@ -1,5 +1,7 @@
 # A docker container containing a fully running VM/370
 
+Use https://github.com/RattyDAVE/docker-ubuntu-hercules-vm370/issues to send feedback, issues, comments and general chat.
+
 # Part of the retro mainframe series.
 
 * https://hub.docker.com/r//rattydave/docker-ubuntu-hercules-vm370 - vm370 Emulator with Robert O'Hara's Six Pack
