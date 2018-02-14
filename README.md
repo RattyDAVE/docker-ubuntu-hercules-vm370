@@ -42,7 +42,7 @@ Then connect a 3270 terminal to the container ip address on port 3270.
 x3270 ipaddress:3270
 ```
 
-To access a console connection 
+To access a console connection - this will also be the console connection on failure.
 
 ```
 telnet ipaddress 3270
