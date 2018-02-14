@@ -42,10 +42,15 @@ Then connect a 3270 terminal to the container ip address on port 3270.
 x3270 ipaddress:3270
 ```
 
+To access a console connection 
+
+```
+telnet ipaddress 3270
+```
 
 # Users
 
-By default the OPERATOR userid logs in using the Hercules window.  From the command line you can issue Hercules commands.  To issue commands to the OPERATOR userid you must prefix the command with a single "/".  To shut everything down, first log off any users you have been using.  Then from the Hercules window type "/shutdown" to bring down VM/370.  Finally, issue the Hercules "quit" command.
+By default the OPERATOR (password of OPERATOR) userid logs in using the Hercules window.  From the command line you can issue Hercules commands.  To issue commands to the OPERATOR userid you must prefix the command with a single "/".  To shut everything down, first log off any users you have been using.  Then from the Hercules window type "/shutdown" to bring down VM/370.  Finally, issue the Hercules "quit" command.
 
 ## There are several userids defined:
 
