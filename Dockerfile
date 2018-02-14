@@ -12,6 +12,8 @@ RUN	apt-get update && \
       rm vm370sixpack-1_2.zip && \
       sed -i s/Disks/disks/g sixpack.conf && \
       sed -i s/Shadow/shadow/g sixpack.conf && \
+      echo "HTTPPORT       8083" >> /opt/hercules/vm370/sixpack.conf && \
+      sed -i "s\3215-C  NOPROMPT\3270 CONS\g" sixpack.conf && \
       apt-get -y autoclean && apt-get -y autoremove && \
       echo "#!/bin/bash" > start_vm370.sh && \
       echo "cd /opt/hercules/vm370"  >> start_vm370.sh && \
