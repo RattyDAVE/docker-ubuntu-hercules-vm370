@@ -20,7 +20,7 @@ http://www.smrcc.org.uk/members/g4ugm/index.htm  - G4UGM's Vintage and Classic C
 ## Usage
 
 ```
-docker run --name vm370 \
+docker run -d --name vm370 \
            -p 3270:3270 -p 8038:8038 \
            rattydave/docker-ubuntu-hercules-vm370:latest
 ```
@@ -31,7 +31,7 @@ To get the http://docker.host:8038 for the Hercules console.
 Or
 
 ```
-docker run --name vm370 rattydave/docker-ubuntu-hercules-vm370:latest
+docker run -d --name vm370 rattydave/docker-ubuntu-hercules-vm370:latest
 
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vm370
 ```
