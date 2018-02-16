@@ -32,7 +32,7 @@ To get the http://docker.host:8038 for the Hercules console.
 Or
 
 ```
-docker run -d --name vm370 rattydave/docker-ubuntu-hercules-vm370:latest
+docker run -dit --name vm370 rattydave/docker-ubuntu-hercules-vm370:latest
 
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vm370
 ```
@@ -47,6 +47,12 @@ To access a console connection - this will also be the console connection on fai
 
 ```
 telnet ipaddress 3270
+```
+
+To get to the hercules screen in the docker container.
+
+```
+docker exec -it vm370 screen -d -RR herc
 ```
 
 # Users
