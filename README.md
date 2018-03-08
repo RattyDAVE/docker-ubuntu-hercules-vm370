@@ -22,7 +22,7 @@ http://www.smrcc.org.uk/members/g4ugm/index.htm  - G4UGM's Vintage and Classic C
 ## Usage
 
 ```
-docker run -d --name vm370 \
+docker run -dit --name vm370 \
            -p 3270:3270 -p 8038:8038 \
            rattydave/docker-ubuntu-hercules-vm370:latest
 ```
