@@ -7,7 +7,7 @@ RUN	apt-get update && \
       cd hercules && \
       mkdir vm370 && \
       cd vm370 && \
-      wget ttp://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_3_Beta3.zip && \
+      wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_3_Beta3.zip && \
       unzip vm370sixpack-1_2.zip && \
       rm vm370sixpack-1_2.zip && \
       sed -i s/Disks/disks/g sixpack.conf && \
