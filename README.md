@@ -18,7 +18,7 @@ Use https://github.com/RattyDAVE/docker-ubuntu-hercules-vm370/issues to send fee
 * Paul Gorinskey's 5-Pack System
 * Robert O'Hara's Six Pack *** Now with V1.2 ***
 
-http://www.smrcc.org.uk/members/g4ugm/index.htm  - G4UGM's Vintage and Classic Computer pages   
+http://www.smrcc.org.uk/members/g4ugm/index.htm  - G4UGM's Vintage and Classic Computer pages
 
 ## Usage
 
@@ -55,6 +55,17 @@ To get to the hercules screen in the docker container.
 
 ```
 docker exec -it vm370 screen -d -RR herc
+```
+
+
+# BETA VM/370 Sixpack Beta 1.3
+
+To use the VM/370 Sixpack Beta 1.3.
+
+```
+docker run -dit --name vm370 \
+           -p 3270:3270 -p 8038:8038 \
+           rattydave/docker-ubuntu-hercules-vm370:beta
 ```
 
 # Users
