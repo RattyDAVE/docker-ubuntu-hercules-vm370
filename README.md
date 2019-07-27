@@ -76,7 +76,7 @@ You are able to use you own config and disk with this docker container by using 
 ```
 docker run -dit --name herc-special \
            -p 3270:3270 -p 8038:8038 \
-           -v %LOCAL_DIR%:/opt/hercules/config
+           -v %LOCAL_DIR%:/opt/hercules/config \
            rattydave/docker-ubuntu-hercules-vm370:latest
 ```
 
@@ -87,7 +87,7 @@ If all the configuration and disks are located in /root/mainframe the use the fo
 ```
 docker run -dit --name herc-special \
            -p 3270:3270 -p 8038:8038 \
-           -v /root/mainframe:/opt/hercules/config
+           -v /root/mainframe:/opt/hercules/config \
            rattydave/docker-ubuntu-hercules-vm370:latest
 ```
       
