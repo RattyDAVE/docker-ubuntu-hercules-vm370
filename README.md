@@ -91,9 +91,9 @@ docker run -dit --name herc-special \
            rattydave/docker-ubuntu-hercules-vm370:latest
 ```
       
-The container will need a start script in the config directory and configured to config file. change %CONFIG_FILE% to your config file.
+The container will need a start script ```start.sh``` in the config directory and configured to config file. change %CONFIG_FILE% to your config file.
 
-``` start.sh
+```
 #!/bin/bash
 cd /opt/hercules/config
 /usr/bin/screen -dm -S herc hercules -f %CONFIG_FILE%
