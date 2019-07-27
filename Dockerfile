@@ -5,8 +5,8 @@ RUN	apt-get update && \
       cd /opt && \
       mkdir hercules && \
       cd hercules && \
-      mkdir vm370 && \
-      cd vm370 && \
+      mkdir config && \
+      cd config && \
       wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_2.zip && \
       unzip vm370sixpack-1_2.zip && \
       rm vm370sixpack-1_2.zip && \
@@ -15,16 +15,15 @@ RUN	apt-get update && \
       sed -i "s/0009/# 0009/g" sixpack.conf && \
       sed -i "s/# 0010/0010/g" sixpack.conf && \
       echo "HTTPPORT       8038" >> /opt/hercules/vm370/sixpack.conf && \
+      echo "#!/bin/bash" > start.sh && \
+      echo "cd /opt/hercules/config" >> start.sh && \
+      echo "/usr/bin/screen -dm -S herc hercules -f sixpack.conf" >> start.sh && \
+      echo "/bin/sh" >> start.sh && \
+      chmod 755 start.sh && \
       apt-get -y autoclean && apt-get -y autoremove && \
-      echo "#!/bin/bash" > start_vm370.sh && \
-      echo "cd /opt/hercules/vm370"  >> start_vm370.sh && \
-      echo "/usr/bin/screen -dm -S herc hercules -f sixpack.conf"  >> start_vm370.sh && \
-      echo "/bin/sh"   >> start_vm370.sh && \
-      chmod 755 start_vm370.sh && \
       apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) && \
       rm -rf /var/lib/apt/lists/*
 
 EXPOSE      3270 8038
-WORKDIR     /opt/hercules/vm370
-ENTRYPOINT  ["/opt/hercules/vm370/start_vm370.sh"]
-#ENTRYPOINT  ["/usr/bin/screen","-dm","-S","herc","./start_vm370.sh"]
+WORKDIR     /opt/hercules/config
+ENTRYPOINT  ["/opt/hercules/config/start.sh"]
