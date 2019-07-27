@@ -68,6 +68,46 @@ docker run -dit --name vm370 \
            rattydave/docker-ubuntu-hercules-vm370:beta
 ```
 
+# Special Usage
+
+You are able to use you own config and disk with this docker container by using the following.
+
+
+```
+docker run -dit --name vm370 \
+           -p 3270:3270 -p 8038:8038 \
+           -v %LOCAL_DIR%:/opt/hercules/config
+           rattydave/docker-ubuntu-hercules-vm370:latest
+```
+
+Example
+
+If all the configuration and disks are located in /root/mainframe the use the following.
+
+```
+docker run -dit --name vm370 \
+           -p 3270:3270 -p 8038:8038 \
+           -v /root/mainframe:/opt/hercules/config
+           rattydave/docker-ubuntu-hercules-vm370:latest
+```
+      
+The container will need a start script in the config directory and configured to config file. change %CONFIG_FILE% to your config file.
+
+``` start.sh
+#!/bin/bash
+cd /opt/hercules/config
+/usr/bin/screen -dm -S herc hercules -f %CONFIG_FILE%
+echo /bin/sh
+```
+
+Also in the config file I would suggest adding the following line.
+
+```
+HTTPPORT       8038
+```
+
+This will enable the web interface.
+
 # Users
 
 By default the OPERATOR (password of OPERATOR) userid logs in using the Hercules window.  From the command line you can issue Hercules commands.  To issue commands to the OPERATOR userid you must prefix the command with a single "/".  To shut everything down, first log off any users you have been using.  Then from the Hercules window type "/shutdown" to bring down VM/370.  Finally, issue the Hercules "quit" command.
