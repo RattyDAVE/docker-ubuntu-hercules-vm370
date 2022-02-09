@@ -1,6 +1,8 @@
 #FROM	ubuntu:18.04
 FROM	ubuntu:20.04
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN	apt-get update && \
       apt-get install -y  unzip wget hercules mc screen && \
       cd /opt && \
@@ -8,9 +10,9 @@ RUN	apt-get update && \
       cd hercules && \
       mkdir config && \
       cd config && \
-      wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_2.zip && \
-      unzip vm370sixpack-1_2.zip && \
-      rm vm370sixpack-1_2.zip && \
+      wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_3.zip && \
+      unzip vm370sixpack-1_3.zip && \
+      rm vm370sixpack-1_3.zip && \
       sed -i s/Disks/disks/g sixpack.conf && \
       sed -i s/Shadow/shadow/g sixpack.conf && \
       sed -i "s/0009/# 0009/g" sixpack.conf && \
