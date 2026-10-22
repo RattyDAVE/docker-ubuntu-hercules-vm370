@@ -3,8 +3,7 @@
 #FROM	ubuntu:22.04
 FROM	ubuntu
 
-
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN	apt-get update && \
       apt-get install -y  unzip wget hercules mc screen && \
@@ -13,7 +12,8 @@ RUN	apt-get update && \
       cd hercules && \
       mkdir config && \
       cd config && \
-      wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_3.zip && \
+#      wget http://www.smrcc.org.uk/members/g4ugm/vm-370/vm370sixpack-1_3.zip && \
+      wget https://vm370.org/sites/default/files/software/vm370sixpack-1_3.zip  && \
       unzip vm370sixpack-1_3.zip && \
       rm vm370sixpack-1_3.zip && \
       sed -i s/Disks/disks/g sixpack.conf && \
