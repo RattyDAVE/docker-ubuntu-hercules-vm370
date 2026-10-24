@@ -1,7 +1,7 @@
 #FROM	ubuntu:18.04
 #FROM	ubuntu:20.04
 #FROM	ubuntu:22.04
-FROM	ubuntu
+FROM	ubuntu:26.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
